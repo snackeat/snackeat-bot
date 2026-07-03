@@ -7,6 +7,7 @@ import json
 import logging
 import os
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from telegram import (
     Update,
@@ -67,7 +68,7 @@ async def handle_webapp_data(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return
 
     user    = update.effective_user
-    now     = datetime.now().strftime("%d.%m.%Y %H:%M")
+    now     = datetime.now(ZoneInfo("Europe/Moscow")).strftime("%d.%m.%Y %H:%M")
     shop    = data.get("shop", "—")
     name    = data.get("name", "—")
     phone   = data.get("phone", "—")
