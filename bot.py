@@ -106,7 +106,6 @@ async def handle_webapp_data(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
     # ── Кнопки менеджера: позвонить ───────────────────────────────────────────
     manager_kb = InlineKeyboardMarkup([[
-        InlineKeyboardButton("📞 Позвонить", url=f"tel:{phone}"),
         InlineKeyboardButton("💬 Написать", url=f"tg://user?id={user.id}"),
     ]])
 
